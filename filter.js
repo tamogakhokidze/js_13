@@ -27,19 +27,22 @@ getUsers();
 
 function filterData(searchItem){
     listItems.forEach((item) => {
-        console.log(item);// li
+        console.log(item.classList);// li
 
         if(item.innerText.toLowerCase().includes(searchItem.toLowerCase())){
 
-            item.classlist.remove('hide')
+            item.classList.remove('hide')
         } 
         else{
-            item.classlist.add('hide')
+            item.classList.add('hide')
         }
     })
 };
 
-filterInput.addEventListener('keyup', function(event){ //ფუნქციის გამოძახება და ივენთის დამატება
+filterInput.addEventListener('keyup', function(event){
+    console.log('avto');
+    
+    //ფუნქციის გამოძახება და ივენთის დამატება
     filterData (event.target.value);// რა არის searchItem განსაზღვრა 
     // console.log(event.target);
 
